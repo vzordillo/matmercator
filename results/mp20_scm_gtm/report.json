@@ -1,0 +1,100 @@
+{
+  "dataset": "mp_20",
+  "n_structures": 45229,
+  "n_frame_set": 5918,
+  "n_features_scm": 20,
+  "n_unique_spacegroups": 177,
+  "splits": [
+    "train",
+    "val",
+    "test"
+  ],
+  "gtm": {
+    "k": 16,
+    "m": 4,
+    "s": 0.3,
+    "regul": 0.1,
+    "niter": 200
+  },
+  "standardize": true,
+  "timings_s": {
+    "gtm_fit_s": 15.4,
+    "project_s": 0.45,
+    "plot_s": 4.38,
+    "validate_s": 7.24
+  },
+  "metrics": {
+    "band_gap": {
+      "observed": 0.10081624074152347,
+      "null_mean": 0.007921999029363363,
+      "null_std": 0.0007185424519982536,
+      "z": 129.2814940214359,
+      "p_value": 0.004975124378109453,
+      "n": 45229
+    },
+    "formation_energy_per_atom": {
+      "observed": 0.13663074455378765,
+      "null_mean": 0.007995445330724429,
+      "null_std": 0.0005933408593470436,
+      "z": 216.7983161729719,
+      "p_value": 0.004975124378109453,
+      "n": 45229
+    },
+    "e_above_hull": {
+      "observed": 0.05916347782622368,
+      "null_mean": 0.007973478662655091,
+      "null_std": 0.000610699045567252,
+      "z": 83.8219734173981,
+      "p_value": 0.004975124378109453,
+      "n": 45229
+    },
+    "crystal_system_knn_purity": {
+      "observed": 0.29050830219549406,
+      "null_mean": 0.16662098063926536,
+      "null_std": 0.0005442040406002997,
+      "z": 227.64866174012835,
+      "p_value": 0.004975124378109453,
+      "k": 15,
+      "n": 45229
+    }
+  },
+  "figures": {
+    "band_gap": "map_band_gap.png",
+    "formation_energy_per_atom": "map_formation_energy_per_atom.png",
+    "e_above_hull": "map_e_above_hull.png",
+    "crystal_system": "map_crystal_system.png",
+    "panel": "map_panel.png"
+  },
+  "provenance": {
+    "git_sha": "3464a08",
+    "versions": {
+      "matmercator": "0.1.0",
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "scikit-learn": "1.7.2",
+      "pandas": "2.3.3",
+      "matplotlib": "3.10.9",
+      "pymatgen": "2025.10.7",
+      "matminer": "0.9.3",
+      "ugtm": "2.3.0",
+      "spglib": "2.7.0"
+    },
+    "inputs": {
+      "train": {
+        "file": "mp_20/train.csv",
+        "sha256_16": "133bab58dba02d31",
+        "bytes": 34975028
+      },
+      "val": {
+        "file": "mp_20/val.csv",
+        "sha256_16": "7b5f4085464b3eac",
+        "bytes": 11617279
+      },
+      "test": {
+        "file": "mp_20/test.csv",
+        "sha256_16": "dd605c7543cf95a1",
+        "bytes": 11599133
+      }
+    }
+  }
+}

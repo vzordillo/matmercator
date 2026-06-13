@@ -1,0 +1,83 @@
+{
+  "n_structures": 6000,
+  "n_frame_set": 1441,
+  "subset_note": "stratified subset (<=2000/split) for tractability",
+  "gtm": {
+    "k": 16,
+    "m": 4,
+    "s": 0.3,
+    "regul": 0.1,
+    "niter": 200
+  },
+  "arms": [
+    {
+      "descriptor": "scm",
+      "n_features": 20,
+      "mean_q2_gtm_resp": 0.05866611006242539,
+      "n_sites_q2_gtm_2d": 0.3308993935363459,
+      "properties": {
+        "band_gap": {
+          "q2_gtm_resp": 0.06028242713549725,
+          "q2_gtm_2d": 0.129075546164796,
+          "q2_pca_2d": 0.11245925646915134
+        },
+        "formation_energy_per_atom": {
+          "q2_gtm_resp": 0.08627751974611786,
+          "q2_gtm_2d": 0.14195889098227887,
+          "q2_pca_2d": 0.1618726507611924
+        },
+        "e_above_hull": {
+          "q2_gtm_resp": 0.029438383305661064,
+          "q2_gtm_2d": 0.016904980202814612,
+          "q2_pca_2d": 0.02209862806581686
+        }
+      }
+    },
+    {
+      "descriptor": "composition",
+      "n_features": 132,
+      "mean_q2_gtm_resp": 0.45270694982913867,
+      "n_sites_q2_gtm_2d": 0.21616501980683778,
+      "properties": {
+        "band_gap": {
+          "q2_gtm_resp": 0.42704440687401357,
+          "q2_gtm_2d": 0.4052131170613965,
+          "q2_pca_2d": 0.39259868582780555
+        },
+        "formation_energy_per_atom": {
+          "q2_gtm_resp": 0.817794969493965,
+          "q2_gtm_2d": 0.8105971931949736,
+          "q2_pca_2d": 0.7757221205863593
+        },
+        "e_above_hull": {
+          "q2_gtm_resp": 0.11328147311943726,
+          "q2_gtm_2d": 0.08765550721278637,
+          "q2_pca_2d": 0.06130659458887033
+        }
+      }
+    },
+    {
+      "descriptor": "scm+composition",
+      "n_features": 152,
+      "mean_q2_gtm_resp": 0.41875622811606233,
+      "n_sites_q2_gtm_2d": 0.4647901297305935,
+      "properties": {
+        "band_gap": {
+          "q2_gtm_resp": 0.3873553282750585,
+          "q2_gtm_2d": 0.3587378371230049,
+          "q2_pca_2d": 0.2679862519060443
+        },
+        "formation_energy_per_atom": {
+          "q2_gtm_resp": 0.7494579844957806,
+          "q2_gtm_2d": 0.7291719117438791,
+          "q2_pca_2d": 0.35437996817884887
+        },
+        "e_above_hull": {
+          "q2_gtm_resp": 0.11945537157734787,
+          "q2_gtm_2d": 0.0909238261973474,
+          "q2_pca_2d": 0.03283156955550692
+        }
+      }
+    }
+  ]
+}

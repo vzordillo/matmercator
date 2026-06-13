@@ -1,0 +1,39 @@
+# Local documents — feasibility study (.docx) and background reference (.pdf)
+*.docx
+*.pdf
+
+# Python build / tooling artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.coverage
+build/
+dist/
+
+# OS / editor cruft
+.DS_Store
+
+# Claude Code project instructions (kept local, not published)
+CLAUDE.md
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Datasets — large and externally sourced (CDVAE benchmarks). Only the primary
+# supported mp_20 set is tracked; carbon_24 / perov_5 / alex_mp_20 are fetched
+# separately (alex_mp_20 also exceeds GitHub's 100 MB file limit).
+data/*
+!data/mp_20/
+
+# Generated run artifacts. The canonical results/mp20_scm_gtm/ run is committed
+# (README figures + the regression golden report.json); these are not.
+results/cache/
+results/smoke/
+results/_verify_canonical/
+# Per-run logs written beside any run's outputs (not a versioned artifact).
+results/**/run.log

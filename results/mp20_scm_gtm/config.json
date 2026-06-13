@@ -1,0 +1,33 @@
+{
+  "data_root": "/sessions/zealous-gifted-turing/mnt/Materials Cartography/data",
+  "dataset": "mp_20",
+  "splits": [
+    "train",
+    "val",
+    "test"
+  ],
+  "frame_split": "train",
+  "max_structures": null,
+  "diag_elems": true,
+  "sort_eigenvalues": false,
+  "frame_set_size": 6000,
+  "frame_strata": [
+    "spacegroup.number"
+  ],
+  "standardize": true,
+  "random_state": 1234,
+  "gtm_k": 16,
+  "gtm_m": 4,
+  "gtm_s": 0.3,
+  "gtm_regul": 0.1,
+  "gtm_niter": 200,
+  "color_properties": [
+    "band_gap",
+    "formation_energy_per_atom",
+    "e_above_hull"
+  ],
+  "grid_bins": 20,
+  "n_permutations": 200,
+  "knn_k": 15,
+  "output_dir": "/sessions/zealous-gifted-turing/mnt/Materials Cartography/results/mp20_scm_gtm"
+}

@@ -1,0 +1,97 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "matmercator"
+description = "Materials Space Cartography — A Generative Topographic Mapping of Inorganic Crystal Structures into Probabilistic 2D Property Maps and Landscapes"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = [
+    "generative-topographic-mapping",
+    "materials-informatics",
+    "crystal-structure",
+    "dimensionality-reduction",
+    "chemical-space",
+]
+dynamic = ["version"]
+
+# Runtime stack, pinned to the validated versions (mirrors requirements.txt).
+dependencies = [
+    "numpy==2.2.6",
+    "scipy==1.15.3",
+    "scikit-learn==1.7.2",
+    "pandas==2.3.3",
+    "matplotlib==3.10.9",
+    "pyarrow",
+    "pymatgen==2025.10.7",
+    "matminer==0.9.3",
+    "ugtm==2.3.0",
+    "spglib==2.7.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov", "ruff", "mypy", "jupyter"]
+
+[project.scripts]
+matmercator = "matmercator.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/your-org/matmercator"
+Repository = "https://github.com/your-org/matmercator"
+
+[tool.setuptools.dynamic]
+version = { attr = "matmercator.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["matmercator*"]
+
+# --------------------------------------------------------------------------- #
+# Ruff — single tool for linting and formatting (replaces pyink/isort/
+# pydocstyle/pylint). Configured to match the prior Google style.
+# --------------------------------------------------------------------------- #
+[tool.ruff]
+line-length = 80
+target-version = "py310"
+extend-exclude = ["data", "results", "examples"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "D", "B", "UP", "SIM", "NPY"]
+# D203/D213 are the known mutually-exclusive docstring pair; E501 is left to the
+# formatter (ruff format governs code line length; the only lines that exceed 80
+# are occasional docstrings/comments the formatter won't wrap).
+ignore = ["D203", "D213", "E501"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.isort]
+force-single-line = true
+known-first-party = ["matmercator"]
+
+[tool.ruff.lint.per-file-ignores]
+# Tests, scripts (thin shims), examples and the package surface don't need the
+# full docstring rule set.
+"tests/*" = ["D"]
+"scripts/*" = ["D"]
+"examples/*" = ["D"]
+"matmercator/__init__.py" = ["D"]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+# --------------------------------------------------------------------------- #
+# mypy — lenient: the domain stack (pymatgen, matminer, ugtm, …) ships no type
+# stubs, so missing imports are ignored. The goal is type-checking in CI, not
+# a fully-typed codebase.
+# --------------------------------------------------------------------------- #
+[tool.mypy]
+python_version = "3.10"
+mypy_path = "src"
+ignore_missing_imports = true
+warn_unused_ignores = false
+disallow_untyped_defs = false
+check_untyped_defs = false
+exclude = ["tests/", "scripts/", "examples/"]

@@ -1,0 +1,16 @@
+02:08:57  train: 27136 structures featurized in 51.5s | X=(27136, 24) | parse_fail=0
+02:09:12  val: 9047 structures featurized in 14.9s | X=(9047, 24) | parse_fail=0
+02:09:27  test: 9046 structures featurized in 14.5s | X=(9046, 24) | parse_fail=0
+17:51:41  loaded cache: 45229 structures, 20 features
+17:51:57  fit GTM (k=16) on frame set of 5918 in 15.4s
+17:51:57  projected 45229 structures in 0.45s
+17:52:09  
+MP-20 cartography — 45229 structures, 20-dim SCM, frame set 5918
+
+Map-quality (observed vs label-shuffled null):
+  band_gap                     obs=0.101  null=0.008±0.001  z=129.3  p=0.0050
+  formation_energy_per_atom    obs=0.137  null=0.008±0.001  z=216.8  p=0.0050
+  e_above_hull                 obs=0.059  null=0.008±0.001  z=83.8  p=0.0050
+  crystal_system_knn_purity    obs=0.291  null=0.167±0.001  z=227.6  p=0.0050
+
+Timings (s): gtm_fit_s=15.4, project_s=0.45, plot_s=4.38, validate_s=7.24
